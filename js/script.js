@@ -7,39 +7,63 @@ const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
 
-// Open and close the navigation menu
-menuToggle.addEventListener("click", function () {
+// Check that the navigation elements exist
+if (menuToggle && navLinks) {
 
-    navLinks.classList.toggle("active");
+    // OPEN AND CLOSE THE NAVIGATION MENU
+    menuToggle.addEventListener("click", function () {
 
-    const isExpanded = navLinks.classList.contains("active");
+        navLinks.classList.toggle("active");
 
-    menuToggle.setAttribute("aria-expanded", isExpanded);
+        const isExpanded = navLinks.classList.contains("active");
 
-    menuToggle.setAttribute(
-        "aria-label",
-        isExpanded ? "Close navigation menu" : "Open navigation menu"
-    );
-
-});
-
-
-// Close the menu after clicking a navigation link
-const navigationItems = navLinks.querySelectorAll("a");
-
-navigationItems.forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        navLinks.classList.remove("active");
-
-        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-expanded", isExpanded);
 
         menuToggle.setAttribute(
             "aria-label",
-            "Open navigation menu"
+            isExpanded ? "Close navigation menu" : "Open navigation menu"
         );
 
     });
 
-});
+
+    // CLOSE THE MENU AFTER CLICKING A NAVIGATION LINK
+    const navigationItems = navLinks.querySelectorAll("a");
+
+    navigationItems.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+        });
+
+    });
+
+
+    // CLOSE THE MENU WHEN ESCAPE IS PRESSED
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+        }
+
+    });
+
+}
