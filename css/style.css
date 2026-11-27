@@ -299,10 +299,9 @@ section {
 
 
 /* =========================================
-   7. SKILLS, PROJECTS AND INTERESTS
+   7. PROJECTS AND INTERESTS
 ========================================= */
 
-.skills-container,
 .projects-container,
 .interests-container {
     display: grid;
@@ -311,7 +310,6 @@ section {
     margin-top: 38px;
 }
 
-.skill-card,
 .project-card,
 .interest-card {
     background: var(--surface);
@@ -323,7 +321,6 @@ section {
     transition: var(--transition);
 }
 
-.skill-card:hover,
 .project-card:hover,
 .interest-card:hover {
     transform: translateY(-6px);
@@ -331,21 +328,82 @@ section {
     border-color: var(--lilac);
 }
 
-.skill-card h3,
 .project-card h3,
 .interest-card h3 {
     color: var(--white);
     margin-bottom: 10px;
 }
 
-.skill-card p,
 .project-card p,
 .interest-card p {
     color: var(--muted);
 }
 
 
-/* SKILL CARDS */
+/* =========================================
+   8. SKILLS SECTION
+========================================= */
+
+.skills-category {
+    margin-top: 45px;
+}
+
+.skills-category-title {
+    color: var(--lilac);
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+}
+
+
+/* TECHNICAL AND PROFESSIONAL GRIDS */
+
+.skills-category .skills-container {
+    display: grid;
+    gap: 22px;
+    margin-top: 0;
+}
+
+/* Two technical skill cards */
+
+.skills-category:not(.professional-skills) .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Three professional skill cards per row */
+
+.professional-skills .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* GENERAL SKILL CARD */
+
+.skill-card {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--surface);
+    padding: 28px;
+
+    border: 1px solid rgba(118, 152, 255, 0.15);
+    border-radius: 14px;
+
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    background: var(--surface-light);
+    border-color: var(--lilac);
+}
+
+
+/* SKILL CARD CONTENT */
+
+.skill-card-content {
+    position: relative;
+    z-index: 2;
+}
 
 .card-number {
     display: block;
@@ -355,59 +413,93 @@ section {
     margin-bottom: 12px;
 }
 
-.skill-card h3 {
-    font-size: 1.3rem;
+.skill-card h4 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .skill-card p {
-    color: var(--green);
-}
-
-
-/* PROJECT CARDS */
-
-.project-card h3 {
-    font-size: 1.2rem;
-    margin-top: 12px;
-}
-
-.project-status {
-    display: inline-block;
-    padding: 4px 11px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-}
-
-.completed {
-    color: var(--green);
-    background: rgba(118, 201, 156, 0.12);
-}
-
-.ongoing {
-    color: var(--gold);
-    background: rgba(214, 181, 104, 0.12);
-}
-
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 20px;
-}
-
-.project-tags span {
-    color: var(--lilac);
-    background: rgba(185, 154, 239, 0.1);
-
-    padding: 5px 11px;
-    border-radius: 5px;
-    font-size: 0.8rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
 
 /* =========================================
-   CURRENTLY EXPLORING SECTION
+   TECHNICAL SKILL WATERMARKS
+========================================= */
+
+.technical-card {
+    border-top: 3px solid var(--blue);
+}
+
+.skill-watermark {
+    position: absolute;
+
+    width: 125px;
+    height: 125px;
+
+    object-fit: contain;
+
+    right: 12px;
+    bottom: 12px;
+
+    opacity: 0.12;
+
+    z-index: 1;
+    pointer-events: none;
+
+    transition: var(--transition);
+}
+
+.technical-card:hover .skill-watermark {
+    opacity: 0.23;
+    transform: scale(1.08) rotate(-5deg);
+}
+
+
+/* TECHNICAL SKILL CLOSING NOTE */
+
+.skills-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 22px;
+}
+
+
+/* =========================================
+   PROFESSIONAL SKILL ICONS
+========================================= */
+
+.professional-skills {
+    margin-top: 55px;
+}
+
+.professional-card {
+    border-top: 3px solid var(--green);
+}
+
+.professional-icon {
+    display: inline-block;
+
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+
+    position: relative;
+    z-index: 2;
+
+    transition: var(--transition);
+}
+
+.professional-card:hover .professional-icon {
+    transform: scale(1.12);
+}
+
+
+/* =========================================
+   9. CURRENTLY EXPLORING SECTION
 ========================================= */
 
 .exploring-container {
@@ -462,8 +554,9 @@ section {
 
 }
 
+
 /* =========================================
-   ABOUT SECTION
+   10. ABOUT SECTION
 ========================================= */
 
 .about-container {
@@ -498,7 +591,7 @@ section {
 .about-highlights span {
     color: var(--gold);
     background: var(--surface);
-    border: 1px solid rgba(214, 182, 104, 0.3);
+    border: 1px solid rgba(214, 181, 104, 0.3);
     padding: 9px 15px;
     border-radius: 30px;
     font-size: 0.85rem;
@@ -541,8 +634,9 @@ section {
 
 }
 
+
 /* =========================================
-   8. CONTACT SECTION
+   11. CONTACT SECTION
 ========================================= */
 
 .contact-section {
@@ -562,7 +656,7 @@ section {
 
 
 /* =========================================
-   9. FOOTER
+   12. FOOTER
 ========================================= */
 
 .site-footer {
@@ -577,10 +671,10 @@ section {
 
 
 /* =========================================
-   10. TABLET RESPONSIVENESS
+   13. TABLET RESPONSIVENESS
 ========================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
     .hero {
         gap: 40px;
@@ -598,11 +692,15 @@ section {
         gap: 15px;
     }
 
+    .professional-skills .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 
 /* =========================================
-   11. MOBILE RESPONSIVENESS
+   14. MOBILE RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 650px) {
@@ -702,9 +800,10 @@ section {
         font-size: 1.9rem;
     }
 
-    .skills-container,
     .projects-container,
-    .interests-container {
+    .interests-container,
+    .skills-category:not(.professional-skills) .skills-container,
+    .professional-skills .skills-container {
         grid-template-columns: 1fr;
         gap: 18px;
     }
@@ -715,11 +814,16 @@ section {
         padding: 23px;
     }
 
+    .skill-watermark {
+        width: 110px;
+        height: 110px;
+    }
+
 }
 
 
 /* =========================================
-   12. SMALL SCREEN ADJUSTMENTS
+   15. SMALL SCREEN ADJUSTMENTS
 ========================================= */
 
 @media (max-width: 380px) {
@@ -741,7 +845,7 @@ section {
 
 
 /* =========================================
-   13. REDUCED MOTION ACCESSIBILITY
+   16. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
