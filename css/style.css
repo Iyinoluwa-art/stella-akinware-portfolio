@@ -298,9 +298,13 @@ section {
 }
 
 
+
 /* =========================================
    7. PROJECTS AND INTERESTS
 ========================================= */
+
+
+/* SHARED CARD GRID */
 
 .projects-container,
 .interests-container {
@@ -309,6 +313,9 @@ section {
     gap: 24px;
     margin-top: 38px;
 }
+
+
+/* SHARED CARD APPEARANCE */
 
 .project-card,
 .interest-card {
@@ -321,12 +328,18 @@ section {
     transition: var(--transition);
 }
 
+
+/* SHARED HOVER EFFECT */
+
 .project-card:hover,
 .interest-card:hover {
     transform: translateY(-6px);
     background: var(--surface-light);
     border-color: var(--lilac);
 }
+
+
+/* SHARED CARD TEXT */
 
 .project-card h3,
 .interest-card h3 {
@@ -337,6 +350,13 @@ section {
 .project-card p,
 .interest-card p {
     color: var(--muted);
+}
+
+
+/* PROJECT SECTION */
+
+.projects-section .project-card {
+    border-top: 3px solid var(--blue);
 }
 
 
@@ -416,6 +436,22 @@ section {
     color: var(--gold);
     transform: translateX(4px);
 }
+
+
+/* INTERESTS SECTION */
+
+.interests-section .interest-card {
+    border-top: 3px solid var(--lilac);
+}
+
+.interests-section .interest-card h3 {
+    color: var(--lilac);
+}
+
+
+/* =========================================
+   END OF PROJECTS AND INTERESTS
+========================================= */
 
 
 /* =========================================
