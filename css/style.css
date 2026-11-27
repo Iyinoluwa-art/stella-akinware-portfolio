@@ -298,7 +298,6 @@ section {
 }
 
 
-
 /* =========================================
    7. PROJECTS AND INTERESTS
 ========================================= */
@@ -477,13 +476,15 @@ section {
     margin-top: 0;
 }
 
-/* Two technical skill cards */
+
+/* SINGLE TECHNICAL SKILL CARD */
 
 .skills-category:not(.professional-skills) .skills-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(0, 560px);
 }
 
-/* Three professional skill cards per row */
+
+/* THREE PROFESSIONAL SKILL CARDS PER ROW */
 
 .professional-skills .skills-container {
     grid-template-columns: repeat(3, 1fr);
@@ -618,7 +619,7 @@ section {
 
 .exploring-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 22px;
     margin-top: 38px;
 }
