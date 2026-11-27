@@ -1,11 +1,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description" content="The personal portfolio of Stella Akinware, an aspiring software developer and technology enthusiast.">
+
+    <meta name="theme-color" content="#101522">
 
     <title>Stella Akinware | Personal Portfolio</title>
 
@@ -15,13 +18,28 @@
 <body>
 
     <!-- HEADER AND NAVIGATION -->
-    <header>
-        <nav class="navbar">
-            <a href="#home" class="logo">
+    <header class="site-header">
+
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a href="#home" class="logo" aria-label="Stella Akinware home">
                 <img src="assets/images/sa-logo.png" alt="SA Logo">
             </a>
 
-            <ul class="nav-links">
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="nav-links"
+                type="button"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -29,17 +47,22 @@
                 <li><a href="#interests">Interests</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
         </nav>
+
     </header>
 
 
-    <!-- HOME SECTION -->
     <main>
 
+        <!-- HOMEPAGE -->
         <section id="home" class="hero">
 
             <div class="hero-content">
-                <p class="greeting">Hello, welcome to my portfolio.</p>
+
+                <p class="greeting">
+                    Hello, welcome to my portfolio.
+                </p>
 
                 <h1>
                     I'm <span>Stella Akinware</span>
@@ -57,6 +80,7 @@
                 </p>
 
                 <div class="hero-buttons">
+
                     <a href="#projects" class="btn primary-btn">
                         Explore My Projects
                     </a>
@@ -64,14 +88,19 @@
                     <a href="#about" class="btn secondary-btn">
                         Get to Know Me
                     </a>
+
                 </div>
+
             </div>
 
+
             <div class="hero-image">
+
                 <img
                     src="assets/images/profile-photo.png"
                     alt="Professional portrait of Stella Akinware"
                 >
+
             </div>
 
         </section>
@@ -79,9 +108,13 @@
 
         <!-- ABOUT SECTION -->
         <section id="about" class="section">
-            <h2>About Me</h2>
 
-            <p>
+            <div class="section-heading">
+                <p class="section-label">A LITTLE INTRODUCTION</p>
+                <h2>About Me</h2>
+            </div>
+
+            <p class="section-description">
                 I am an aspiring software developer with a growing
                 interest in technology, programming and innovation.
 
@@ -92,49 +125,63 @@
                 My journey is driven by curiosity, continuous learning
                 and the desire to build useful solutions.
             </p>
+
         </section>
 
 
         <!-- SKILLS SECTION -->
         <section id="skills" class="section">
-            <h2>My Skills</h2>
 
-            <p>
+            <div class="section-heading">
+                <p class="section-label">WHAT I'M LEARNING</p>
+                <h2>My Skills</h2>
+            </div>
+
+            <p class="section-description">
                 I am continuously developing my technical abilities
                 through learning and practical projects.
             </p>
 
             <div class="skills-container">
 
-                <div class="skill-card">
+                <article class="skill-card">
+                    <span class="card-number">01</span>
                     <h3>Python</h3>
                     <p>Beginner</p>
-                </div>
+                </article>
 
-                <div class="skill-card">
+                <article class="skill-card">
+                    <span class="card-number">02</span>
                     <h3>HTML5</h3>
                     <p>Learning</p>
-                </div>
+                </article>
 
-                <div class="skill-card">
+                <article class="skill-card">
+                    <span class="card-number">03</span>
                     <h3>CSS3</h3>
                     <p>Learning</p>
-                </div>
+                </article>
 
-                <div class="skill-card">
+                <article class="skill-card">
+                    <span class="card-number">04</span>
                     <h3>Git & GitHub</h3>
                     <p>Beginner</p>
-                </div>
+                </article>
 
             </div>
+
         </section>
 
 
         <!-- PROJECTS SECTION -->
         <section id="projects" class="section">
-            <h2>My Projects</h2>
 
-            <p>
+            <div class="section-heading">
+                <p class="section-label">MY PRACTICAL WORK</p>
+                <h2>My Projects</h2>
+            </div>
+
+            <p class="section-description">
                 Here are some of the projects I have worked on
                 while developing my programming and problem-solving
                 abilities.
@@ -143,99 +190,169 @@
             <div class="projects-container">
 
                 <article class="project-card">
+
+                    <span class="project-status completed">
+                        Completed
+                    </span>
+
                     <h3>Student Grade Tracker</h3>
+
                     <p>
                         A Python program that processes student scores,
                         calculates averages and evaluates pass or fail
                         results.
                     </p>
-                    <span>Python</span>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                    </div>
+
                 </article>
 
+
                 <article class="project-card">
+
+                    <span class="project-status completed">
+                        Completed
+                    </span>
+
                     <h3>ATM Management System</h3>
+
                     <p>
                         A Python project exploring object-oriented
                         programming and JSON-based data storage.
                     </p>
-                    <span>Python | JSON</span>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>JSON</span>
+                    </div>
+
                 </article>
 
+
                 <article class="project-card">
+
+                    <span class="project-status ongoing">
+                        In Progress
+                    </span>
+
                     <h3>The Chosen Group of Schools Website</h3>
+
                     <p>
-                        A school website project developed using
-                        HTML and CSS.
+                        A school website project being developed
+                        using HTML and CSS.
                     </p>
-                    <span>HTML | CSS</span>
+
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+
                 </article>
 
+
                 <article class="project-card">
+
+                    <span class="project-status ongoing">
+                        In Progress
+                    </span>
+
                     <h3>Apex Logistic & Inventory Management System</h3>
+
                     <p>
-                        An ongoing Python project focused on inventory
-                        management, customer orders and data persistence.
+                        A Python project focused on inventory
+                        management, customer orders and reliable
+                        data storage.
                     </p>
-                    <span>Python</span>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                    </div>
+
                 </article>
 
             </div>
+
         </section>
 
 
         <!-- INTERESTS SECTION -->
         <section id="interests" class="section">
-            <h2>My Interests</h2>
+
+            <div class="section-heading">
+                <p class="section-label">BEYOND PROGRAMMING</p>
+                <h2>My Interests</h2>
+            </div>
 
             <div class="interests-container">
-                <div class="interest-card">
+
+                <article class="interest-card">
                     <h3>Technology</h3>
-                    <p>Exploring technology and its possibilities.</p>
-                </div>
+                    <p>
+                        Exploring technology and its possibilities.
+                    </p>
+                </article>
 
-                <div class="interest-card">
+                <article class="interest-card">
                     <h3>Science</h3>
-                    <p>Understanding the world through curiosity.</p>
-                </div>
+                    <p>
+                        Understanding the world through curiosity.
+                    </p>
+                </article>
 
-                <div class="interest-card">
+                <article class="interest-card">
                     <h3>Music</h3>
-                    <p>Enjoying creativity and musical expression.</p>
-                </div>
+                    <p>
+                        Enjoying creativity and musical expression.
+                    </p>
+                </article>
 
-                <div class="interest-card">
+                <article class="interest-card">
                     <h3>Innovation</h3>
-                    <p>Discovering ideas that can solve problems.</p>
-                </div>
+                    <p>
+                        Discovering ideas that can solve problems.
+                    </p>
+                </article>
+
             </div>
+
         </section>
 
 
-        <
-<!-- CONTACT SECTION -->
-<section id="contact" class="section">
-    <h2>Let's Connect</h2>
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
 
-    <p>
-        Interested in my work or have a project idea?
-        Feel free to get in touch.
-    </p>
+            <div class="section-heading">
+                <p class="section-label">HAVE A QUESTION?</p>
+                <h2>Let's Connect</h2>
+            </div>
 
-    <a href="mailto:stella_akinware_dev@gmail.com"
-       class="btn primary-btn">
-        Send Me an Email
-    </a>
-</section>
+            <p class="section-description">
+                Interested in my work or have a project idea?
+                Feel free to get in touch.
+            </p>
+
+            <a
+                href="mailto:stella_akinware_dev@gmail.com"
+                class="btn primary-btn"
+            >
+                Send Me an Email
+            </a>
+
+        </section>
 
     </main>
 
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="site-footer">
+
         <p>
             &copy; 2026 Stella Akinware.
             All rights reserved.
         </p>
+
     </footer>
 
 
