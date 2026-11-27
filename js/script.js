@@ -1,19 +1,45 @@
 
-/* =================================
-   STELLA AKINWARE - PERSONAL PORTFOLIO
-   Main JavaScript File
-================================= */
+// =========================================
+// 1. MOBILE NAVIGATION
+// =========================================
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
 
 
-// 1. CONFIRM THAT JAVASCRIPT IS RUNNING
+// Open and close the navigation menu
+menuToggle.addEventListener("click", function () {
 
-console.log("Stella Akinware's Portfolio is running!");
+    navLinks.classList.toggle("active");
+
+    const isExpanded = navLinks.classList.contains("active");
+
+    menuToggle.setAttribute("aria-expanded", isExpanded);
+
+    menuToggle.setAttribute(
+        "aria-label",
+        isExpanded ? "Close navigation menu" : "Open navigation menu"
+    );
+
+});
 
 
-// 2. WAIT FOR THE HTML DOCUMENT TO LOAD
+// Close the menu after clicking a navigation link
+const navigationItems = navLinks.querySelectorAll("a");
 
-document.addEventListener("DOMContentLoaded", function () {
+navigationItems.forEach(function (link) {
 
-    console.log("Portfolio document loaded successfully!");
+    link.addEventListener("click", function () {
+
+        navLinks.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
+    });
 
 });
