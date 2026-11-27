@@ -1,0 +1,106 @@
+
+/* =================================
+   STELLA AKINWARE - PERSONAL PORTFOLIO
+   Main Stylesheet
+================================= */
+
+
+/* 1. COLOUR VARIABLES */
+
+:root {
+    --navy: #101522;
+    --blue: #7698FF;
+    --lilac: #B99AEF;
+    --green: #76C99C;
+    --white: #F5F6FA;
+
+    --text-muted: #AEB8CB;
+    --surface: #192235;
+}
+
+
+/* 2. BASIC RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 3. GENERAL PAGE STYLING */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--navy);
+    color: var(--white);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+
+/* 4. HEADINGS */
+
+h1, h2, h3 {
+    color: var(--white);
+    line-height: 1.2;
+}
+
+
+/* 5. LINKS */
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--lilac);
+}
+
+
+/* 6. BUTTON FOUNDATION */
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+
+/* 7. SELECTION COLOUR */
+
+::selection {
+    background-color: var(--lilac);
+    color: var(--navy);
+}
+
+
+/* 8. RESPONSIVE FOUNDATION */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* 9. REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
