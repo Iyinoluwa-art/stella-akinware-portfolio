@@ -340,6 +340,84 @@ section {
 }
 
 
+/* PROJECT STATUS LABELS */
+
+.project-status {
+    display: inline-block;
+    padding: 5px 12px;
+
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+.project-status.completed {
+    color: var(--green);
+    background: rgba(118, 201, 156, 0.12);
+    border: 1px solid rgba(118, 201, 156, 0.3);
+}
+
+.project-status.ongoing {
+    color: var(--gold);
+    background: rgba(214, 181, 104, 0.12);
+    border: 1px solid rgba(214, 181, 104, 0.3);
+}
+
+
+/* PROJECT TECHNOLOGY TAGS */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.project-tags span {
+    color: var(--lilac);
+    background: rgba(185, 154, 239, 0.1);
+
+    border: 1px solid rgba(185, 154, 239, 0.2);
+    border-radius: 20px;
+
+    padding: 5px 11px;
+    font-size: 0.75rem;
+}
+
+
+/* CLICKABLE PROJECT TITLES */
+
+.project-link {
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    color: var(--blue);
+}
+
+
+/* LIVE PROJECT LINK */
+
+.project-visit-link {
+    display: inline-block;
+    margin-top: 20px;
+
+    color: var(--green);
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    transition: var(--transition);
+}
+
+.project-visit-link:hover {
+    color: var(--gold);
+    transform: translateX(4px);
+}
+
+
 /* =========================================
    8. SKILLS SECTION
 ========================================= */
@@ -426,9 +504,7 @@ section {
 }
 
 
-/* =========================================
-   TECHNICAL SKILL WATERMARKS
-========================================= */
+/* TECHNICAL SKILL WATERMARKS */
 
 .technical-card {
     position: relative;
@@ -473,9 +549,7 @@ section {
 }
 
 
-/* =========================================
-   PROFESSIONAL SKILL ICONS
-========================================= */
+/* PROFESSIONAL SKILL ICONS */
 
 .professional-skills {
     margin-top: 55px;
