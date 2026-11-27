@@ -431,6 +431,10 @@ section {
 ========================================= */
 
 .technical-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
     border-top: 3px solid var(--blue);
 }
 
@@ -440,22 +444,22 @@ section {
     width: 125px;
     height: 125px;
 
-    object-fit: contain;
-
     right: 12px;
     bottom: 12px;
 
-    opacity: 0.12;
+    object-fit: contain;
 
-    z-index: 1;
+    opacity: 0.10;
+
+    z-index: 0;
     pointer-events: none;
 
     transition: var(--transition);
 }
 
 .technical-card:hover .skill-watermark {
-    opacity: 0.23;
-    transform: scale(1.08) rotate(-5deg);
+    opacity: 0.20;
+    transform: scale(1.08) rotate(-8deg);
 }
 
 
