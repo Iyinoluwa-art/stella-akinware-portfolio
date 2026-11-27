@@ -463,6 +463,85 @@ section {
 }
 
 /* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.about-content h3 {
+    color: var(--lilac);
+    font-size: 1.7rem;
+    line-height: 1.4;
+    margin-bottom: 22px;
+}
+
+.about-content p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.about-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.about-highlights span {
+    color: var(--gold);
+    background: var(--surface);
+    border: 1px solid rgba(214, 182, 104, 0.3);
+    padding: 9px 15px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid rgba(118, 152, 255, 0.35);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ABOUT SECTION ON SMALL SCREENS */
+
+@media (max-width: 768px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .about-image img {
+        max-width: 300px;
+    }
+
+}
+
+/* =========================================
    8. CONTACT SECTION
 ========================================= */
 
