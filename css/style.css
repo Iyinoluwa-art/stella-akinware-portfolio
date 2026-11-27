@@ -407,6 +407,62 @@ section {
 
 
 /* =========================================
+   CURRENTLY EXPLORING SECTION
+========================================= */
+
+.exploring-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 38px;
+}
+
+.exploring-card {
+    background: var(--surface);
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid rgba(118, 152, 255, 0.2);
+    transition: var(--transition);
+}
+
+.exploring-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    background: var(--surface-light);
+}
+
+.exploring-number {
+    display: inline-block;
+    color: var(--gold);
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.exploring-card h3 {
+    color: var(--lilac);
+    margin-bottom: 12px;
+    font-size: 1.15rem;
+}
+
+.exploring-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+
+/* EXPLORING CARDS ON SMALL SCREENS */
+
+@media (max-width: 650px) {
+
+    .exploring-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+}
+
+/* =========================================
    8. CONTACT SECTION
 ========================================= */
 
