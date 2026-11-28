@@ -1,9 +1,19 @@
 
 /* =========================================
+   STELLA AKINWARE PORTFOLIO
+   COMPLETE RESPONSIVE STYLESHEET
+   DARK MODE + LIGHT MODE
+========================================= */
+
+
+/* =========================================
    1. COLOUR PALETTE AND DESIGN VARIABLES
 ========================================= */
 
 :root {
+
+    /* DARK MODE: DEFAULT */
+
     --navy: #101522;
     --surface: #192235;
     --surface-light: #222E45;
@@ -15,12 +25,39 @@
     --gold: #D6B568;
     --muted: #AEB8CB;
 
+    --header-bg: rgba(16, 21, 34, 0.95);
+    --border-color: rgba(118, 152, 255, 0.15);
+    --card-shadow: rgba(0, 0, 0, 0.25);
+
     --transition: 0.3s ease;
 }
 
 
 /* =========================================
-   2. GENERAL RESET
+   2. LIGHT MODE COLOURS
+========================================= */
+
+html[data-theme="light"] {
+
+    --navy: #F3F6FF;
+    --surface: #FFFFFF;
+    --surface-light: #E9EEFF;
+
+    --blue: #365FD4;
+    --lilac: #8050BD;
+    --green: #21845A;
+    --white: #202B43;
+    --gold: #B47A16;
+    --muted: #596780;
+
+    --header-bg: rgba(255, 255, 255, 0.96);
+    --border-color: rgba(54, 95, 212, 0.18);
+    --card-shadow: rgba(38, 57, 100, 0.10);
+}
+
+
+/* =========================================
+   3. GENERAL RESET
 ========================================= */
 
 * {
@@ -30,11 +67,19 @@
     scroll-behavior: smooth;
 }
 
+html {
+    background: var(--navy);
+}
+
 body {
     background: var(--navy);
     color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.7;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
 }
 
 a {
@@ -67,7 +112,7 @@ section {
 
 
 /* =========================================
-   3. HEADER AND NAVIGATION
+   4. HEADER AND NAVIGATION
 ========================================= */
 
 .site-header {
@@ -75,10 +120,14 @@ section {
     top: 0;
     z-index: 1000;
 
-    background: rgba(16, 21, 34, 0.95);
+    background: var(--header-bg);
     backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid rgba(118, 152, 255, 0.15);
+    border-bottom: 1px solid var(--border-color);
+
+    transition:
+        background var(--transition),
+        border-color var(--transition);
 }
 
 .navbar {
@@ -89,6 +138,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .logo img {
@@ -116,6 +166,49 @@ section {
 }
 
 
+/* =========================================
+   5. THEME SWITCHER
+========================================= */
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+
+    background: var(--surface);
+    color: var(--white);
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    font-size: 0.82rem;
+    font-weight: bold;
+
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background: var(--surface-light);
+    border-color: var(--lilac);
+    transform: translateY(-2px);
+}
+
+.theme-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.theme-text {
+    font-size: 0.8rem;
+}
+
+
 /* MOBILE MENU BUTTON */
 
 .menu-toggle {
@@ -138,7 +231,7 @@ section {
 
 
 /* =========================================
-   4. HOMEPAGE / HERO SECTION
+   6. HOMEPAGE / HERO SECTION
 ========================================= */
 
 .hero {
@@ -217,7 +310,7 @@ section {
 
 
 /* =========================================
-   5. BUTTONS
+   7. BUTTONS
 ========================================= */
 
 .btn {
@@ -232,11 +325,12 @@ section {
 
 .primary-btn {
     background: var(--blue);
-    color: var(--navy);
+    color: #FFFFFF;
 }
 
 .primary-btn:hover {
     background: var(--gold);
+    color: #FFFFFF;
     transform: translateY(-3px);
 }
 
@@ -247,13 +341,13 @@ section {
 
 .secondary-btn:hover {
     background: var(--lilac);
-    color: var(--navy);
+    color: #FFFFFF;
     transform: translateY(-3px);
 }
 
 
 /* =========================================
-   6. GENERAL SECTION STYLING
+   8. GENERAL SECTION STYLING
 ========================================= */
 
 .section {
@@ -299,7 +393,7 @@ section {
 
 
 /* =========================================
-   7. PROJECTS AND INTERESTS
+   9. PROJECTS AND INTERESTS
 ========================================= */
 
 
@@ -321,7 +415,7 @@ section {
     background: var(--surface);
     padding: 28px;
 
-    border: 1px solid rgba(118, 152, 255, 0.15);
+    border: 1px solid var(--border-color);
     border-radius: 14px;
 
     transition: var(--transition);
@@ -449,12 +543,7 @@ section {
 
 
 /* =========================================
-   END OF PROJECTS AND INTERESTS
-========================================= */
-
-
-/* =========================================
-   8. SKILLS SECTION
+   10. SKILLS SECTION
 ========================================= */
 
 .skills-category {
@@ -500,7 +589,7 @@ section {
     background: var(--surface);
     padding: 28px;
 
-    border: 1px solid rgba(118, 152, 255, 0.15);
+    border: 1px solid var(--border-color);
     border-radius: 14px;
 
     transition: var(--transition);
@@ -614,7 +703,7 @@ section {
 
 
 /* =========================================
-   9. CURRENTLY EXPLORING SECTION
+   11. CURRENTLY EXPLORING SECTION
 ========================================= */
 
 .exploring-container {
@@ -628,7 +717,7 @@ section {
     background: var(--surface);
     padding: 28px;
     border-radius: 14px;
-    border: 1px solid rgba(118, 152, 255, 0.2);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
@@ -658,20 +747,8 @@ section {
 }
 
 
-/* EXPLORING CARDS ON SMALL SCREENS */
-
-@media (max-width: 650px) {
-
-    .exploring-container {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-}
-
-
 /* =========================================
-   10. ABOUT SECTION
+   12. ABOUT SECTION
 ========================================= */
 
 .about-container {
@@ -726,32 +803,12 @@ section {
     object-fit: cover;
     border-radius: 18px;
     border: 2px solid rgba(118, 152, 255, 0.35);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-}
-
-
-/* ABOUT SECTION ON SMALL SCREENS */
-
-@media (max-width: 768px) {
-
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .about-content h3 {
-        font-size: 1.4rem;
-    }
-
-    .about-image img {
-        max-width: 300px;
-    }
-
+    box-shadow: 0 15px 40px var(--card-shadow);
 }
 
 
 /* =========================================
-   11. CONTACT SECTION
+   13. CONTACT SECTION
 ========================================= */
 
 .contact-section {
@@ -771,7 +828,7 @@ section {
 
 
 /* =========================================
-   12. FOOTER
+   14. FOOTER
 ========================================= */
 
 .site-footer {
@@ -781,12 +838,54 @@ section {
     background: var(--surface);
     color: var(--muted);
 
-    border-top: 1px solid rgba(185, 154, 239, 0.15);
+    border-top: 1px solid var(--border-color);
+
+    transition:
+        background var(--transition),
+        color var(--transition);
 }
 
 
 /* =========================================
-   13. TABLET RESPONSIVENESS
+   15. LIGHT MODE REFINEMENTS
+========================================= */
+
+html[data-theme="light"] .hero-image img {
+    box-shadow: 14px 14px 0 rgba(128, 80, 189, 0.15);
+}
+
+html[data-theme="light"] .project-status.completed {
+    background: rgba(33, 132, 90, 0.09);
+    border-color: rgba(33, 132, 90, 0.25);
+}
+
+html[data-theme="light"] .project-status.ongoing {
+    background: rgba(180, 122, 22, 0.09);
+    border-color: rgba(180, 122, 22, 0.25);
+}
+
+html[data-theme="light"] .project-tags span {
+    background: rgba(128, 80, 189, 0.08);
+    border-color: rgba(128, 80, 189, 0.18);
+}
+
+html[data-theme="light"] .about-highlights span {
+    background: #FFF8E8;
+    color: #80530C;
+    border-color: rgba(180, 122, 22, 0.25);
+}
+
+html[data-theme="light"] .skill-watermark {
+    opacity: 0.07;
+}
+
+html[data-theme="light"] .technical-card:hover .skill-watermark {
+    opacity: 0.14;
+}
+
+
+/* =========================================
+   16. TABLET RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 900px) {
@@ -811,17 +910,22 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .theme-toggle {
+        padding: 8px 10px;
+    }
+
 }
 
 
 /* =========================================
-   14. MOBILE RESPONSIVENESS
+   17. MOBILE RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 650px) {
 
     .navbar {
         min-height: 75px;
+        gap: 10px;
     }
 
     .logo img {
@@ -831,6 +935,19 @@ section {
 
     .menu-toggle {
         display: block;
+        margin-left: auto;
+    }
+
+    .theme-toggle {
+        padding: 9px 11px;
+    }
+
+    .theme-text {
+        display: none;
+    }
+
+    .theme-icon {
+        font-size: 1.2rem;
     }
 
     .nav-links {
@@ -848,7 +965,7 @@ section {
         padding: 10px 0 20px;
 
         background: var(--surface);
-        border-bottom: 1px solid rgba(118, 152, 255, 0.2);
+        border-bottom: 1px solid var(--border-color);
     }
 
     .nav-links.active {
@@ -934,11 +1051,29 @@ section {
         height: 110px;
     }
 
+    .exploring-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .about-image img {
+        max-width: 300px;
+    }
+
 }
 
 
 /* =========================================
-   15. SMALL SCREEN ADJUSTMENTS
+   18. SMALL SCREEN ADJUSTMENTS
 ========================================= */
 
 @media (max-width: 380px) {
@@ -956,11 +1091,20 @@ section {
         text-align: center;
     }
 
+    .navbar {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .theme-toggle {
+        padding: 8px;
+    }
+
 }
 
 
 /* =========================================
-   16. REDUCED MOTION ACCESSIBILITY
+   19. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -974,3 +1118,8 @@ section {
     }
 
 }
+
+
+/* =========================================
+   END OF STYLESHEET
+========================================= */
