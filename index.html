@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +12,7 @@
     <meta name="author" content="Stella Akinware">
 
     <!-- BROWSER THEME COLOUR -->
-    <meta name="theme-color" content="#101522">
+    <meta name="theme-color" content="#101522" id="browser-theme-color">
 
     <!-- OPEN GRAPH METADATA -->
     <meta property="og:type" content="website">
@@ -63,6 +62,18 @@
                 <li><a href="#interests">Interests</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
+            <!-- THEME SWITCHER -->
+            <button
+                class="theme-toggle"
+                id="theme-toggle"
+                type="button"
+                aria-label="Switch to light mode"
+                title="Switch to light mode"
+            >
+                <span class="theme-icon" aria-hidden="true">☀</span>
+                <span class="theme-text">Light Mode</span>
+            </button>
 
         </nav>
 
@@ -346,6 +357,7 @@
 
             <div class="projects-container">
 
+                <!-- PROJECT 1: STUDYMATE -->
                 <article class="project-card">
 
                     <span class="project-status completed">
@@ -354,28 +366,72 @@
 
                     <h3>
                         <a
-                            href="https://chosen-group-of-schools.vercel.app/"
+                            href="https://iyinoluwa-art.github.io/studymate/"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project-link"
                         >
-                            The Chosen Group of Schools Website
+                            StudyMate
                         </a>
                     </h3>
 
                     <p>
-                        A school website developed using HTML and CSS,
-                        designed to present school information through
-                        a structured and accessible web interface.
+                        A student-focused learning website designed
+                        to support studying and make learning more
+                        interactive through educational resources
+                        and quizzes.
                     </p>
 
                     <div class="project-tags">
                         <span>HTML</span>
                         <span>CSS</span>
+                        <span>JavaScript</span>
                     </div>
 
                     <a
-                        href="https://chosen-group-of-schools.vercel.app/"
+                        href="https://iyinoluwa-art.github.io/studymate/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-visit-link"
+                    >
+                        View Live Website ↗
+                    </a>
+
+                </article>
+
+
+                <!-- PROJECT 2: THE CHOSEN GROUP OF SCHOOLS -->
+                <article class="project-card">
+
+                    <span class="project-status completed">
+                        Completed
+                    </span>
+
+                    <h3>
+                        <a
+                            href="https://iyinoluwa-art.github.io/chosen-school/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            The Chosen Group of Schools
+                        </a>
+                    </h3>
+
+                    <p>
+                        A school website developed to provide an
+                        organised online presentation of the school,
+                        its identity and educational information.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                    <a
+                        href="https://iyinoluwa-art.github.io/chosen-school/"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="project-visit-link"
@@ -469,6 +525,7 @@
     </footer>
 
 
+    <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
 
 </body>
