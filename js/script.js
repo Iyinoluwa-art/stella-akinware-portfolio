@@ -13,7 +13,7 @@ const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
 
-// Check that navigation elements exist
+// CHECK THAT NAVIGATION ELEMENTS EXIST
 if (menuToggle && navLinks) {
 
     // OPEN AND CLOSE THE NAVIGATION MENU
@@ -78,29 +78,38 @@ if (menuToggle && navLinks) {
 
 
 // =========================================
-// 2. LIGHT AND DARK MODE
+// 2. THEME ELEMENTS
 // =========================================
 
 
-// SELECT THE THEME ELEMENTS
+// SELECT THE THEME DROPDOWN
+const themeSelect = document.getElementById("theme-select");
 
-const themeToggle = document.getElementById("theme-toggle");
 
-const themeIcon = document.querySelector(".theme-icon");
-
-const themeText = document.querySelector(".theme-text");
-
+// SELECT THE BROWSER THEME COLOUR META TAG
 const browserThemeColor = document.getElementById(
     "browser-theme-color"
 );
 
 
 // THEME COLOURS FOR THE BROWSER
-
 const themeColors = {
+
     dark: "#101522",
-    light: "#F3F6FF"
+
+    light: "#F3F6FF",
+
+    multi: "#171329"
+
 };
+
+
+// AVAILABLE WEBSITE THEMES
+const availableThemes = ["dark", "light", "multi"];
+
+
+// LOCAL STORAGE KEY
+const themeStorageKey = "stella-portfolio-theme";
 
 
 // =========================================
@@ -109,54 +118,30 @@ const themeColors = {
 
 function applyTheme(theme) {
 
-    // UPDATE HTML THEME ATTRIBUTE
+    // VALIDATE THE SELECTED THEME
+    if (!availableThemes.includes(theme)) {
+
+        theme = "dark";
+
+    }
+
+
+    // UPDATE THE HTML THEME ATTRIBUTE
     document.documentElement.setAttribute(
         "data-theme",
         theme
     );
 
 
-    // UPDATE THE THEME BUTTON
-    if (themeToggle && themeIcon && themeText) {
+    // UPDATE THE THEME SELECTOR
+    if (themeSelect) {
 
-        if (theme === "dark") {
-
-            themeIcon.textContent = "☀";
-
-            themeText.textContent = "Light Mode";
-
-            themeToggle.setAttribute(
-                "aria-label",
-                "Switch to light mode"
-            );
-
-            themeToggle.setAttribute(
-                "title",
-                "Switch to light mode"
-            );
-
-        } else {
-
-            themeIcon.textContent = "☾";
-
-            themeText.textContent = "Dark Mode";
-
-            themeToggle.setAttribute(
-                "aria-label",
-                "Switch to dark mode"
-            );
-
-            themeToggle.setAttribute(
-                "title",
-                "Switch to dark mode"
-            );
-
-        }
+        themeSelect.value = theme;
 
     }
 
 
-    // UPDATE BROWSER THEME COLOUR
+    // UPDATE THE BROWSER THEME COLOUR
     if (browserThemeColor) {
 
         browserThemeColor.setAttribute(
@@ -174,8 +159,7 @@ function applyTheme(theme) {
 // =========================================
 
 
-// Dark mode is the default theme.
-
+// DARK MODE IS THE DEFAULT THEME
 let savedTheme = "dark";
 
 
@@ -183,10 +167,10 @@ let savedTheme = "dark";
 try {
 
     const storedTheme = localStorage.getItem(
-        "stella-portfolio-theme"
+        themeStorageKey
     );
 
-    if (storedTheme === "light" || storedTheme === "dark") {
+    if (availableThemes.includes(storedTheme)) {
 
         savedTheme = storedTheme;
 
@@ -210,31 +194,26 @@ applyTheme(savedTheme);
 // 5. THEME SWITCHING FUNCTIONALITY
 // =========================================
 
-if (themeToggle) {
 
-    themeToggle.addEventListener("click", function () {
+// CHECK THAT THE THEME SELECTOR EXISTS
+if (themeSelect) {
 
-        // GET THE CURRENT THEME
-        const currentTheme = document.documentElement
-            .getAttribute("data-theme");
+    themeSelect.addEventListener("change", function () {
 
-
-        // DETERMINE THE NEW THEME
-        const newTheme = currentTheme === "dark"
-            ? "light"
-            : "dark";
+        // GET THE SELECTED THEME
+        const selectedTheme = themeSelect.value;
 
 
-        // APPLY THE NEW THEME
-        applyTheme(newTheme);
+        // APPLY THE SELECTED THEME
+        applyTheme(selectedTheme);
 
 
         // SAVE THE VISITOR'S PREFERENCE
         try {
 
             localStorage.setItem(
-                "stella-portfolio-theme",
-                newTheme
+                themeStorageKey,
+                selectedTheme
             );
 
         } catch (error) {
