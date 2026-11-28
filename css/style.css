@@ -25,6 +25,8 @@
     --gold: #D6B568;
     --muted: #AEB8CB;
 
+    --button-text: #101522;
+
     --header-bg: rgba(16, 21, 34, 0.95);
     --border-color: rgba(118, 152, 255, 0.15);
     --card-shadow: rgba(0, 0, 0, 0.25);
@@ -49,6 +51,8 @@ html[data-theme="light"] {
     --white: #202B43;
     --gold: #B47A16;
     --muted: #596780;
+
+    --button-text: #FFFFFF;
 
     --header-bg: rgba(255, 255, 255, 0.96);
     --border-color: rgba(54, 95, 212, 0.18);
@@ -325,12 +329,12 @@ section {
 
 .primary-btn {
     background: var(--blue);
-    color: #FFFFFF;
+    color: var(--button-text);
 }
 
 .primary-btn:hover {
     background: var(--gold);
-    color: #FFFFFF;
+    color: var(--button-text);
     transform: translateY(-3px);
 }
 
@@ -341,7 +345,7 @@ section {
 
 .secondary-btn:hover {
     background: var(--lilac);
-    color: #FFFFFF;
+    color: var(--button-text);
     transform: translateY(-3px);
 }
 
